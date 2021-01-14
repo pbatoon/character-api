@@ -36,4 +36,5 @@ public class CharacterController {
                                 @RequestParam(required = false) Integer charisma) {
         characterService.updateStats(characterId, strength, constitution, dexterity, wisdom, intelligence, charisma);
     }
+
 }

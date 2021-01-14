@@ -1,6 +1,8 @@
 package com.dnd.app.character;
 
 import javax.persistence.*;
+import java.util.HashMap;
+import java.util.List;
 
 @Entity
 @Table
@@ -19,12 +21,15 @@ public class Character {
     private String name;
     private String race;
     private String charClass;
+    private Integer level;
     private Integer strength;
     private Integer constitution;
     private Integer dexterity;
     private Integer wisdom;
     private Integer intelligence;
     private Integer charisma;
+    private Integer speed;
+    private Integer hp;
 
     @Transient
     private Integer strModifier;
@@ -44,42 +49,50 @@ public class Character {
     @Transient
     private Integer chaModifier;
 
+    @Transient
+    private String[] inventory;
+
     public Character() {
     }
 
-    public Character(Long id, String name, String race, String charClass,
+    public Character(Long id, String name, String race, String charClass, Integer level,
                      Integer strength, Integer constitution, Integer dexterity,
-                     Integer wisdom, Integer intelligence, Integer charisma) {
+                     Integer wisdom, Integer intelligence, Integer charisma, Integer speed,
+                     Integer hp) {
         this.id = id;
         this.name = name;
         this.race = race;
         this.charClass = charClass;
+        this.level = level;
         this.strength = strength;
         this.constitution = constitution;
         this.dexterity = dexterity;
         this.wisdom = wisdom;
         this.intelligence = intelligence;
         this.charisma = charisma;
+        this.speed = speed;
+        this.hp = hp;
     }
 
-    public Character(String name, String race, String charClass, Integer strength, Integer constitution, Integer dexterity, Integer wisdom, Integer intelligence, Integer charisma) {
+    public Character(String name, String race, String charClass, Integer level,
+                     Integer strength, Integer constitution, Integer dexterity,
+                     Integer wisdom, Integer intelligence, Integer charisma, Integer speed, Integer hp) {
         this.name = name;
         this.race = race;
         this.charClass = charClass;
+        this.level = level;
         this.strength = strength;
         this.constitution = constitution;
         this.dexterity = dexterity;
         this.wisdom = wisdom;
         this.intelligence = intelligence;
         this.charisma = charisma;
+        this.speed = speed;
+        this.hp = hp;
     }
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -104,6 +117,14 @@ public class Character {
 
     public void setCharClass(String charClass) {
         this.charClass = charClass;
+    }
+
+    public Integer getLevel() {
+        return level;
+    }
+
+    public void setLevel(Integer level) {
+        this.level = level;
     }
 
     public Integer getStrength() {
@@ -152,6 +173,22 @@ public class Character {
 
     public void setCharisma(Integer charisma) {
         this.charisma = charisma;
+    }
+
+    public Integer getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(Integer speed) {
+        this.speed = speed;
+    }
+
+    public Integer getHp() {
+        return hp;
+    }
+
+    public void setHp(Integer hp) {
+        this.hp = hp;
     }
 
     public Integer getStrModifier() {
