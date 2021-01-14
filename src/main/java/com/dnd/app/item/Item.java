@@ -7,13 +7,13 @@ import javax.persistence.*;
 public class Item {
     @Id
     @SequenceGenerator(
-            name = "character_sequence",
-            sequenceName = "character_sequence",
+            name = "item_sequence",
+            sequenceName = "item_sequence",
             allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "character_sequence"
+            generator = "item_sequence"
     )
     private Long id;
 
