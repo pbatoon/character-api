@@ -18,6 +18,21 @@ public class ItemController {
     @GetMapping
     public List<Item> getItems() { return itemService.getItems(); }
 
+    @GetMapping(path = "{itemId}")
+    public Item getItemById(@PathVariable("itemId") Long itemId) { return itemService.getItemById(itemId); }
+
     @PostMapping
     public void addItem(@RequestBody Item item) { itemService.addItem(item);}
+
+    @DeleteMapping(path = "{itemId}")
+    public void deleteItem(@PathVariable("itemId") Long itemId) { itemService.deleteItem(itemId); }
+
+    @PutMapping(path = "{itemId}")
+    public void updateItemOwner(@PathVariable("itemId") Long itemId,
+                            @RequestParam(required = true) Integer ownerId) {
+        Long charIdLong = ownerId.longValue();
+        itemService.updateItemOwner(itemId, charIdLong);
+    }
+
+
 }

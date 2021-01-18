@@ -21,6 +21,7 @@ public class Item {
     private Integer cost;
     private Integer weight;
     private String attribute;
+    private Long owner_id;
 
     public Item() {
     }
@@ -44,6 +45,14 @@ public class Item {
         this.name = name;
         this.cost = cost;
         this.weight = weight;
+    }
+
+    public Item(String name, Integer cost, Integer weight, String attribute, Long owner_id) {
+        this.name = name;
+        this.cost = cost;
+        this.weight = weight;
+        this.attribute = attribute;
+        this.owner_id = owner_id;
     }
 
     public Long getId() {
@@ -80,5 +89,13 @@ public class Item {
 
     public void setAttribute(String attribute) {
         this.attribute = attribute;
+    }
+
+    public Long getOwner_id() {
+        return owner_id;
+    }
+
+    public void setOwner_id(Long owner_id) {
+        this.owner_id = owner_id;
     }
 }
