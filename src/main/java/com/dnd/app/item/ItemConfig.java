@@ -1,7 +1,5 @@
 package com.dnd.app.item;
 
-import com.dnd.app.character.Character;
-import com.dnd.app.character.CharacterRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
