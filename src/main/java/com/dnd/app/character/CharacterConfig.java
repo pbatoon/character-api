@@ -7,6 +7,9 @@ import org.springframework.context.annotation.Configuration;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Command Line Runner for initializing Character
+ */
 @Configuration
 public class CharacterConfig {
 

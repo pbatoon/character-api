@@ -1,12 +1,17 @@
 package com.dnd.app.character;
 
 import javax.persistence.*;
-import java.util.HashMap;
-import java.util.List;
 
+/**
+ * Character Entity
+ */
 @Entity
 @Table
 public class Character {
+
+    /**
+     * ID Generator
+     */
     @Id
     @SequenceGenerator(
             name = "character_sequence",
@@ -31,6 +36,10 @@ public class Character {
     private Integer speed;
     private Integer hp;
 
+
+    /**
+     * Modifiers calculated based on corresponding stat
+     */
     @Transient
     private Integer strModifier;
 
@@ -55,6 +64,22 @@ public class Character {
     public Character() {
     }
 
+    /**
+     * Constructor for Character class
+     * @param id - unique identifier, auto generated (Long)
+     * @param name - character name (String)
+     * @param race - character race (String)
+     * @param charClass - character class (String)
+     * @param level - character level (int)
+     * @param strength - STR (int)
+     * @param constitution - CON (int)
+     * @param dexterity - DEX (int)
+     * @param wisdom - WIS (int)
+     * @param intelligence - INT (int)
+     * @param charisma - CHA (int)
+     * @param speed - character speed in ft (int)
+     * @param hp - character hit points (int)
+     */
     public Character(Long id, String name, String race, String charClass, Integer level,
                      Integer strength, Integer constitution, Integer dexterity,
                      Integer wisdom, Integer intelligence, Integer charisma, Integer speed,
@@ -191,6 +216,10 @@ public class Character {
         this.hp = hp;
     }
 
+    /**
+     * Calculating modifier from corresponding stat
+     * @return - stat modifier
+     */
     public Integer getStrModifier() {
         int str_divide = this.strength - 10;
         Integer div = Integer.valueOf(str_divide);

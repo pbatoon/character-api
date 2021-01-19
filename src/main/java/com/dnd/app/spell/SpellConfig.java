@@ -7,6 +7,9 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
 
+/**
+ * Command Line Runner for Spell
+ */
 @Configuration
 public class SpellConfig {
 

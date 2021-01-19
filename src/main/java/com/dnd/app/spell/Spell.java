@@ -2,10 +2,16 @@ package com.dnd.app.spell;
 
 import javax.persistence.*;
 
+/**
+ * Spell Schema
+ */
 @Entity
 @Table
 public class Spell {
 
+    /**
+     * ID generator
+     */
     @Id
     @SequenceGenerator(
             name = "spell_sequence",
@@ -35,6 +41,24 @@ public class Spell {
     public Spell() {
     }
 
+    /**
+     * Constructor with ID
+     * @param id - unique identifier (Long)
+     * @param level - character level (int)
+     * @param name - character name (string)
+     * @param castingTime - time to cast spell (String)
+     * @param duration - spell duration (String)
+     * @param range - spell range in ft (int)
+     * @param attackType - what kind of attack it is (ie. Ranged) (String)
+     * @param save - what saving throw it requires for targets of spell (String)
+     * @param damageEffect - what type of damage it inflicts (String)
+     * @param isVerbal - indicates if spell is verbally invoked (bool)
+     * @param isSomatic - indicates if spell is somatically invoked (bool)
+     * @param isMaterial - indicates if spell is material invoked (bool)
+     * @param school - what magic school the spell comes from (String)
+     * @param description - description of the spell. 700 char limit. (String)
+     * @param casterId - character ID of the spellcaster (Long)
+     */
     public Spell(Long id, Integer level, String name, String castingTime, String duration,
                  Integer range, String attackType, String save, String damageEffect, Boolean isVerbal, Boolean isSomatic,
                  Boolean isMaterial, String school, String description, Long casterId) {
