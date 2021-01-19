@@ -98,4 +98,16 @@ public class Item {
     public void setOwner_id(Long owner_id) {
         this.owner_id = owner_id;
     }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", cost=" + cost +
+                ", weight=" + weight +
+                ", attribute='" + attribute + '\'' +
+                ", owner_id=" + owner_id +
+                '}';
+    }
 }

@@ -30,14 +30,14 @@ public class Spell {
     private Boolean isMaterial;
     private String school;
     private String description;
-    private Long caster_id;
+    private Long casterId;
 
     public Spell() {
     }
 
     public Spell(Long id, Integer level, String name, String castingTime, String duration,
                  Integer range, String attackType, String save, String damageEffect, Boolean isVerbal, Boolean isSomatic,
-                 Boolean isMaterial, String school, String description, Long caster_id) {
+                 Boolean isMaterial, String school, String description, Long casterId) {
         this.id = id;
         this.level = level;
         this.name = name;
@@ -52,13 +52,13 @@ public class Spell {
         this.isMaterial = isMaterial;
         this.school = school;
         this.description = description;
-        this.caster_id = caster_id;
+        this.casterId = casterId;
     }
 
     public Spell(Integer level, String name, String castingTime,
                  String duration, Integer range, String attackType, String save, String damageEffect,
                  Boolean isVerbal, Boolean isSomatic, Boolean isMaterial,
-                 String school, String description, Long caster_id) {
+                 String school, String description, Long casterId) {
         this.level = level;
         this.name = name;
         this.castingTime = castingTime;
@@ -72,7 +72,24 @@ public class Spell {
         this.isMaterial = isMaterial;
         this.school = school;
         this.description = description;
-        this.caster_id = caster_id;
+        this.casterId = casterId;
+    }
+
+    public Spell(Integer level, String name, String castingTime, String duration, Integer range, String attackType, String save, String damageEffect,
+                 Boolean isVerbal, Boolean isSomatic, Boolean isMaterial, String school, String description) {
+        this.level = level;
+        this.name = name;
+        this.castingTime = castingTime;
+        this.duration = duration;
+        this.range = range;
+        this.attackType = attackType;
+        this.save = save;
+        this.damageEffect = damageEffect;
+        this.isVerbal = isVerbal;
+        this.isSomatic = isSomatic;
+        this.isMaterial = isMaterial;
+        this.school = school;
+        this.description = description;
     }
 
     public Long getId() {
@@ -187,32 +204,12 @@ public class Spell {
         this.description = description;
     }
 
-    public Long getCaster_id() {
-        return caster_id;
+    public Long getCasterId() {
+        return casterId;
     }
 
-    public void setCaster_id(Long caster_id) {
-        this.caster_id = caster_id;
+    public void setCasterId(Long casterId) {
+        this.casterId = casterId;
     }
 
-    @Override
-    public String toString() {
-        return "Spell{" +
-                "id=" + id +
-                ", level=" + level +
-                ", name='" + name + '\'' +
-                ", castingTime='" + castingTime + '\'' +
-                ", duration='" + duration + '\'' +
-                ", range=" + range +
-                ", attackType='" + attackType + '\'' +
-                ", save='" + save + '\'' +
-                ", damageEffect='" + damageEffect + '\'' +
-                ", isVerbal=" + isVerbal +
-                ", isSomatic=" + isSomatic +
-                ", isMaterial=" + isMaterial +
-                ", school='" + school + '\'' +
-                ", description='" + description + '\'' +
-                ", caster_id=" + caster_id +
-                '}';
-    }
 }
